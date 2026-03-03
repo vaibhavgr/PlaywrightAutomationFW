@@ -1,0 +1,6 @@
+Create Playwright FW
+- first config file
+
+
+2.pom manager for creating objects 
+3. login page 
