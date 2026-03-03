@@ -1,5 +1,10 @@
-class PetPage {
+const { expect } = require('@playwright/test')
 
+
+class PetPage {
+    /**
+ * @param {import('@playwright/test').Page} page
+ */
     constructor(page) {
         this.page = page;
         this.petNameInput = this.page.locator("#petName");
@@ -13,13 +18,25 @@ class PetPage {
 
     }
 
-    async addPet()
-    {
-        await this.petNameInput.fill('Vaibhav');
-        await this.petYearDropdown
-        
-        
+    async addPet(petname) {
+        await this.petNameInput.fill(petname);
+        await this.handleDropdown(this.petYearDropdown, "2 years")
+        await this.handleDropdown(this.petAgeMonthDropdown, " 2 months")
+        await this.handleDropdown(this.breedDropdown, "Afghan Hound");
+        await this.handleDropdown(this.monthDropdown, "Mar");
+        await this.handleDropdown(this.yearDropdown, "2025");
+        await this.isSpayed.click();
+        await this.submitPetBtn.filter({ hasText: 'Done' }).click();
 
+
+
+
+    }
+
+    async handleDropdown(dropdown, value) {
+        await dropdown.click();
+        const optionClick = this.page.getByRole('option', { name: value, exact: true });
+        await optionClick.click();
     }
 
 
