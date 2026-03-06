@@ -1,6 +1,10 @@
 const { faker } = require('@faker-js/faker');
 class UniqueGenerator {
 
+    static getUniqueName() {
+    return faker.person.firstName();
+  }
+
     static getFakeData(type) {
         switch (type) {
             case 'firstname':

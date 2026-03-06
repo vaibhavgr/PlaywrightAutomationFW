@@ -10,7 +10,9 @@ const poManager = new POManager(page);
 await poManager.getloginPageObject().handleCookies();
 await poManager.getloginPageObject().navigatetoUserPage();
 await poManager.getUserPageObject().createUser();
-await poManager.getPetPageObject().addPet(UniqueGenerator.getFakeData('firstname'));
+const petName  = UniqueGenerator.getFakeData('firstname')
+await poManager.getPetPageObject().addPet(petName);
+await poManager.getLandingPageObject().verifyPetExistsInAddedDrawer(petName);
 
 
 
