@@ -11,7 +11,7 @@ const test = base.extend({
 
     petDetails : async({}, use)=>{
         const petDetails = getPetData();
-        await use(petDetails)
+        await use(petDetails);
     }
 });
 module.exports = { test };

@@ -2,6 +2,7 @@ const { LoginPage } = require('../pageObjects/LoginPage.js');
 const { UserPage } = require('../pageObjects/UserPage.js');
 const { PetPage } = require('../pageObjects/PetPage.js');
 const {LandingPage} = require('../pageObjects/LandingPage.js');
+const { AccountsPage } = require('./AccountsPage.js');
 
 
 
@@ -26,7 +27,9 @@ class POManager {
     getLandingPageObject(){
         return new LandingPage(this.page)
     }
-
+    getAccountsPageObject(){
+        return new AccountsPage(this.page)
+    }
     
 
 }
