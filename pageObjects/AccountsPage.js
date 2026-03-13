@@ -1,8 +1,10 @@
 const {expect } = require('@playwright/test');
-class AccountsPage {
+const { PageHelper } = require('../pageObjects/PageHelper.js');
+
+class AccountsPage extends PageHelper{
 
     constructor(page) {
-        this.page = page;
+        super(page);
         this.confirmRemovePetBtn=this.page.getByRole('button', { name: 'Yes, Remove This Pet' });
     
     }

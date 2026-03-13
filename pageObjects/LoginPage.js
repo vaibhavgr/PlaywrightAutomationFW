@@ -2,11 +2,12 @@
 
 const { expect } = require('@playwright/test');
 const { UniqueGenerator } = require('../utils/UniqueGenerator.js');
+const { PageHelper } = require('../pageObjects/PageHelper.js')
 
-class LoginPage {
+class LoginPage extends PageHelper{
 
     constructor(page) {
-        this.page = page;
+        super(page);
         this.rejectCookies = this.page.getByRole('button', { 'name': 'Reject All' })
         this.maybeLater = this.page.getByRole('button', { 'name': 'Maybe Later' });
         this.signupBtn = this.page.getByRole('button', { 'name': 'Sign Up / Login' })

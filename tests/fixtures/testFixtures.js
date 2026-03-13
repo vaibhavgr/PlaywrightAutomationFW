@@ -1,5 +1,5 @@
 
-const { test: base, request } = require('@playwright/test');
+const { test: base, request , expect } = require('@playwright/test');
 const { createPages } = require('../../pageObjects/PageFactory.js')
 const { getPetData } = require('../../testData/petData.js')
 const { APIUtil } = require('../../utils/APIUtil.js')
@@ -35,7 +35,7 @@ const test = base.extend({
     },
 
     authentUser: async ({ page, authtoken }, use) => {
-          await page.addInitScript(value => {
+        await page.addInitScript(value => {
             window.localStorage.setItem('access_token', value);
         }, authtoken)
         await use()

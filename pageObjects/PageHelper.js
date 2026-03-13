@@ -1,4 +1,4 @@
-class PageHelper{
+class PageHelper {
     constructor(page){
         this.page = page;
     }
@@ -7,6 +7,9 @@ class PageHelper{
             await this.page.waitForNetworkIdle('networkidle')
     }
 
+    
 
 
 }
+
+module.exports = { PageHelper };

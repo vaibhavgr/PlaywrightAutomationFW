@@ -1,12 +1,13 @@
 const { expect } = require('@playwright/test')
+const { PageHelper } = require('../pageObjects/PageHelper.js')
 
 
-class PetPage {
+class PetPage extends PageHelper{
     /**
  * @param {import('@playwright/test').Page} page
  */
     constructor(page) {
-        this.page = page;
+        super(page);
         this.petNameInput = this.page.locator("#petName");
         this.petYearDropdown = this.page.locator("//*[@name='petAge.year']/parent::*//*[@aria-label='Select']/parent::*/..");
         this.petAgeMonthDropdown = this.page.locator("//*[@name='petAge.month']/parent::*//*[@aria-label='Select']/parent::*/..");

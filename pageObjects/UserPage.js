@@ -1,12 +1,13 @@
 const { expect } = require('@playwright/test');
 const { UniqueGenerator } = require('../utils/UniqueGenerator.js');
+const { PageHelper } = require('../pageObjects/PageHelper.js')
 
 
 
-class UserPage {
+class UserPage extends PageHelper {
 
     constructor(page) {
-        this.page = page;
+        super(page);   // parent constructor call
         this.password = this.page.getByRole('textbox', { name: 'Create your password' });
         this.firstName = this.page.getByRole('textbox', { name: 'First name' });
         this.surName = this.page.getByRole('textbox', { name: 'Surname' })
@@ -14,6 +15,7 @@ class UserPage {
         this.newsLetterCheckbox = this.page.locator('#checkbox__newsletterLabel');
         this.agreementLabel = this.page.locator('#checkbox__agreementLabel');
         this.createMyAccountBtn = this.page.getByRole('button', { name: 'Create My Account' })
+        
 
     }
 

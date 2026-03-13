@@ -1,7 +1,7 @@
 const { test } = require('./fixtures/testFixtures.js');
 
 //fixtures(pages,addpet,authentUser) passing in params so that fixtures can be call automatically
-test.only('verify user is able to delete pet profile', async ({ pages, page, authentUser, addPet }) => {
+test('verify user is able to delete pet profile', async ({ pages, page, authentUser, addPet }) => {
   await page.goto("https://www.stg.kinship.com/uk");
   await pages.loginPage.handleCookies();
   await pages.landingPage.navigateToAccountsPage();
