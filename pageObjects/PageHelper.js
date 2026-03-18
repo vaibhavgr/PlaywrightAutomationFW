@@ -1,6 +1,6 @@
-class PageHelper {
+class PageHelper  {
     constructor(page){
-        this.page = page;
+       this.page = page;
     }
 
     async waitForNetworkIdle(){

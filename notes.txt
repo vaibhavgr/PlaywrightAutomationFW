@@ -4,3 +4,27 @@ Create Playwright FW
 
 2.pom manager for creating objects 
 3. login page 
+
+
+
+///////////////////////////////////////
+intersting thinsg to do with playwright 
+- https://timdeschryver.dev/blog/testing-localization-with-playwright
+localisation in playwright
+
+
+
+
+
+Permissions Testing
+{
+  name: 'Camera_Test',
+  use: {
+    permissions: ['camera']
+  }
+}
+
+-----------------
+to run mobile test 
+- npx playwright test --project=Mobile_Android
+npx playwright test --list
