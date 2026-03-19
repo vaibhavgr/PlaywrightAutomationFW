@@ -4,7 +4,7 @@ const { expect } = require('@playwright/test');
 const { UniqueGenerator } = require('../utils/UniqueGenerator.js');
 const { PageHelper } = require('../pageObjects/PageHelper.js')
 
-class LoginPage extends PageHelper{
+export default class LoginPage extends PageHelper{
 
     constructor(page) {
         super(page);
